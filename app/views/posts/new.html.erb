@@ -1,0 +1,36 @@
+<h1>Create New Recipe</h1>
+
+<%= form_for @post do |f| %>
+  <%= f.label :title %>:
+  <%= f.text_field :title %><br>
+
+  <%= f.fields_for :ingredients do |ingr| %>
+    <%= ingr.label :ingredients %>:<br>
+    <%= ingr.text_field :name %><br>
+    <%= ingr.text_field :name %><br>
+    <%= ingr.text_field :name %><br>
+    <%= ingr.text_field :name %><br>
+    <%= ingr.text_field :name %><br>
+    <%= ingr.text_field :name %><br>
+  <% end %>
+
+  <%= f.fields_for :directions do |dir| %>
+    <%= dir.label :directions %>:<br>
+    1.<%= dir.text_field :step %><br>
+    2.<%= dir.text_field :step %><br>
+    3.<%= dir.text_field :step %><br>
+    4.<%= dir.text_field :step %><br>
+    5.<%= dir.text_field :step %><br>
+    6.<%= dir.text_field :step %><br>
+    7.<%= dir.text_field :step %><br>
+    8.<%= dir.text_field :step %><br>
+    9.<%= dir.text_field :step %><br>
+    10.<%= dir.text_field :step %><br>
+  <% end %>
+
+
+  <%= f.label :category %>:
+  <%= f.collection_select :category_id, @categories, :id, :name %><br>
+
+  <%= f.submit %>
+<% end %>

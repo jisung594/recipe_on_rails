@@ -1,0 +1,16 @@
+<h1><%= @user.first_name + " " + @user.last_name %></h1>
+
+  <div>
+  <% @user.posts.each do |post| %>
+  <h3><%= post.title %></h3>
+  Ingredients:<br>
+  <%= post.ingredients %><br>
+  Directions:<br>
+  <%= post.directions %><br>
+  <% end %>
+  </div>
+<%=  %>
+<br>
+
+<!-- redirects user to create a new recipe post -->
+<button><%= link_to "Create New Recipe Post", new_post_path %></button>
